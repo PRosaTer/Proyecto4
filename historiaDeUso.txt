@@ -1,0 +1,19 @@
+Pablo es un usuario que desea comprar un nuevo iPhone en una tienda en línea inspirada en el sitio web de Apple.
+
+Inicio:
+Pablo ingresa al sitio y, en la barra de navegación, ve las opciones “Inicio”, “Productos”, "login o register” Decide hacer clic en Productos para ver lo que la tienda ofrece.
+
+Página de Producto:
+La página del iPhone se abre, mostrando una imagen central del dispositivo. Pablo lee la descripción corta con información clave.
+Al ver el precio, decide hacer clic en el botón de compra para añadir el iPhone a su carrito.
+
+Carrito de Compras:
+En el carrito de compras, Pablo ve la lista de productos con el iPhone que eligió. Revisa las opciones de cantidad y confirma su selección. El subtotal se actualiza automáticamente, y Pablo decide proceder al Checkout.
+
+Proceso de Pago (Checkout):
+En la pantalla de checkout, Pablo ingresa sus detalles de envío y completa los detalles de pago con su tarjeta de crédito. Un resumen del pedido aparece en pantalla, y Pablo verifica que todo esté correcto. Finalmente, hace clic en el botón de confirmación de compra.
+
+Página de Confirmación:
+Pablo llega a la página de confirmación, donde recibe un mensaje de agradecimiento por su compra. También ve un resumen del pedido con detalles y un número de seguimiento. Pablo hace clic en la opción de seguimiento de pedido para conocer el estado de su compra y también nota que hay un enlace para soporte en caso de que necesite ayuda.
+
+Así, Pablo completa la compra de su iPhone de forma fácil y rápida, gracias a la interfaz de la tienda.
