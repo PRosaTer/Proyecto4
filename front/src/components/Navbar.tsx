@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import Swal from "sweetalert2";
+import Link from "next/link";
 
 const Navbar = () => {
   const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
@@ -42,9 +43,9 @@ const Navbar = () => {
             alt="Logo"
             className="h-10 w-10 mr-4"
           />
-          <link href="/" className="text-xl font-semibold text-white">
+          <Link href="/" className="text-xl font-semibold text-white">
             iPhoneManía
-          </link>
+          </Link>
         </div>
 
         <ul className="hidden md:flex space-x-6">
@@ -57,12 +58,12 @@ const Navbar = () => {
             </a>
           </li>
           <li>
-            <link
+            <Link
               href="/product"
               className="text-lg hover:text-white transition duration-300"
             >
               productos
-            </link>
+            </Link>
           </li>
         </ul>
 

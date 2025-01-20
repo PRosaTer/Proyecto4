@@ -9,7 +9,9 @@ import { useRouter } from "next/navigation";
 import Swal from "sweetalert2";
 
 const Cart = () => {
-  const [cartItems, setCartItems] = useState<(Product & { quantity: number })[]>([]);
+  const [cartItems, setCartItems] = useState<
+    (Product & { quantity: number })[]
+  >([]);
   const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
   const [totalAmount, setTotalAmount] = useState<number>(0);
   const router = useRouter();
