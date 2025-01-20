@@ -10,26 +10,23 @@ const Navbar = () => {
   const router = useRouter();
 
   useEffect(() => {
-
     const token = localStorage.getItem("token");
     setIsAuthenticated(!!token);
   }, []);
 
   const handleSignOut = () => {
-
     localStorage.removeItem("token");
     localStorage.removeItem("user");
     setIsAuthenticated(false);
-   
+
     Swal.fire({
       icon: "success",
       title: "Sesión cerrada",
       text: "Has cerrado sesión con éxito.",
       confirmButtonText: "Aceptar",
-      confirmButtonColor: "#4caf50", 
+      confirmButtonColor: "#4caf50",
     });
 
-  
     setTimeout(() => {
       router.push("/login");
     }, 2000);
@@ -41,25 +38,33 @@ const Navbar = () => {
         {/* Imagen en el lado izquierdo */}
         <div className="flex items-center">
           <img
-            src="/imagenes/imagen1.png" 
+            src="/imagenes/imagen1.png"
             alt="Logo"
             className="h-10 w-10 mr-4"
           />
-          <a href="/" className="text-xl font-semibold text-white">
-          iPhoneManía
-          </a>
+          <link href="/" className="text-xl font-semibold text-white">
+            iPhoneManía
+          </link>
         </div>
-
 
         <ul className="hidden md:flex space-x-6">
           <li>
-            <a href="/cart" className="text-lg hover:text-white transition duration-300">carrito</a>
+            <a
+              href="/cart"
+              className="text-lg hover:text-white transition duration-300"
+            >
+              carrito
+            </a>
           </li>
           <li>
-            <a href="/product" className="text-lg hover:text-white transition duration-300">productos</a>
+            <link
+              href="/product"
+              className="text-lg hover:text-white transition duration-300"
+            >
+              productos
+            </link>
           </li>
         </ul>
-
 
         <button
           className="md:hidden text-white"
@@ -81,11 +86,19 @@ const Navbar = () => {
           </svg>
         </button>
 
-  
-        <div className={`flex items-center space-x-6 ${isMobileMenuOpen ? 'flex-col mt-4' : 'hidden'} md:flex`}>
+        <div
+          className={`flex items-center space-x-6 ${
+            isMobileMenuOpen ? "flex-col mt-4" : "hidden"
+          } md:flex`}
+        >
           {isAuthenticated ? (
             <>
-              <a href="/dashboard" className="text-lg hover:text-white transition duration-300">Mi cuenta</a>
+              <a
+                href="/dashboard"
+                className="text-lg hover:text-white transition duration-300"
+              >
+                Mi cuenta
+              </a>
               <button
                 onClick={handleSignOut}
                 className="bg-red-600 text-white px-6 py-2 rounded-lg hover:bg-red-700 transition duration-300"
@@ -95,8 +108,18 @@ const Navbar = () => {
             </>
           ) : (
             <>
-              <a href="/login" className="text-lg hover:text-white transition duration-300">iniciar sesión</a>
-              <a href="/register" className="text-lg hover:text-white transition duration-300">registarse</a>
+              <a
+                href="/login"
+                className="text-lg hover:text-white transition duration-300"
+              >
+                iniciar sesión
+              </a>
+              <a
+                href="/register"
+                className="text-lg hover:text-white transition duration-300"
+              >
+                registarse
+              </a>
             </>
           )}
         </div>
