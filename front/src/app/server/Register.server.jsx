@@ -30,13 +30,16 @@ export const registerUser = async ({
   }
 
   try {
-    const response = await fetch("http://localhost:3002/users/register", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ name, email, password, address, phone }),
-    });
+    const response = await fetch(
+      "https://proyecto4-qrq4.onrender.com/users/register",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ name, email, password, address, phone }),
+      }
+    );
 
     if (!response.ok) {
       if (response.status === 409) {

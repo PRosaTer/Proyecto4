@@ -1,7 +1,9 @@
 // components/server/UserOrders.server.tsx
 import { User, Order } from "../../../interface/types";
 
-export async function fetchUserOrders(token: string | null): Promise<{ user: User | null; orders: Order[] }> {
+export async function fetchUserOrders(
+  token: string | null
+): Promise<{ user: User | null; orders: Order[] }> {
   if (!token) {
     throw new Error("No se encontró token de autenticación");
   }
@@ -11,12 +13,15 @@ export async function fetchUserOrders(token: string | null): Promise<{ user: Use
     throw new Error("Error al leer los datos del usuario");
   }
 
-  const response = await fetch("http://localhost:3002/users/orders", {
-    method: "GET",
-    headers: {
-      Authorization: `${token}`,
-    },
-  });
+  const response = await fetch(
+    "https://proyecto4-qrq4.onrender.com/users/orders",
+    {
+      method: "GET",
+      headers: {
+        Authorization: `${token}`,
+      },
+    }
+  );
 
   if (!response.ok) {
     throw new Error("Error al obtener los datos del usuario y las órdenes");
