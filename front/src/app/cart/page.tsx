@@ -88,7 +88,7 @@ const Cart = () => {
 
     const requestBody = JSON.stringify(order);
 
-    fetch("http://localhost:3002/orders", {
+    fetch("https://proyecto4-qrq4.onrender.com/orders", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

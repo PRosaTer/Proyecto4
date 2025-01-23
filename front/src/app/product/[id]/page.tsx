@@ -17,7 +17,9 @@ const ProductDetail = () => {
     if (id) {
       const fetchProducts = async () => {
         try {
-          const response = await fetch("http://localhost:3002/products");
+          const response = await fetch(
+            "https://proyecto4-qrq4.onrender.com/products"
+          );
           const data: Product[] = await response.json();
           const selectedProduct = data.find((item) => item.id === Number(id));
           setProduct(selectedProduct || null);
@@ -30,7 +32,7 @@ const ProductDetail = () => {
 
       fetchProducts();
     } else {
-      setLoading(false); 
+      setLoading(false);
     }
   }, [id]);
 
@@ -60,13 +62,21 @@ const ProductDetail = () => {
             className="w-full sm:w-1/2 h-96 object-cover rounded-lg shadow-md"
           />
           <div className="flex flex-col justify-between w-full sm:w-1/2">
-            <h1 className="text-3xl font-bold text-center sm:text-left mb-4">{product.name}</h1>
-            <p className="text-lg text-gray-700 dark:text-gray-300 mb-4">{product.description}</p>
-            <p className="text-xl font-semibold text-blue-600 mb-4">Precio: ${product.price}</p>
+            <h1 className="text-3xl font-bold text-center sm:text-left mb-4">
+              {product.name}
+            </h1>
+            <p className="text-lg text-gray-700 dark:text-gray-300 mb-4">
+              {product.description}
+            </p>
+            <p className="text-xl font-semibold text-blue-600 mb-4">
+              Precio: ${product.price}
+            </p>
             <button
               onClick={() => {
                 const cart = JSON.parse(localStorage.getItem("cart") || "[]");
-                const existingProductIndex = cart.findIndex((item: Product) => item.id === product.id);
+                const existingProductIndex = cart.findIndex(
+                  (item: Product) => item.id === product.id
+                );
                 if (existingProductIndex >= 0) {
                   cart[existingProductIndex].quantity += 1;
                 } else {
@@ -75,19 +85,19 @@ const ProductDetail = () => {
                 localStorage.setItem("cart", JSON.stringify(cart));
 
                 Swal.fire({
-                  icon: 'success',
+                  icon: "success",
                   title: `${product.name} ha sido agregado al carrito`,
                   showConfirmButton: false,
-                  timer: 1500
+                  timer: 1500,
                 });
               }}
               className="w-full sm:w-auto px-6 py-3 bg-blue-500 text-white rounded-full hover:bg-blue-600 transition duration-200"
             >
-             agregar al carrito
+              agregar al carrito
             </button>
 
             <button
-              onClick={() => router.push('/product')}
+              onClick={() => router.push("/product")}
               className="w-full sm:w-auto mt-4 px-6 py-3 bg-green-500 text-white rounded-full hover:bg-green-600 transition duration-200"
             >
               ir a productos
