@@ -42,6 +42,16 @@ const Cart = () => {
     localStorage.setItem("cart", JSON.stringify(updatedCart));
   };
 
+  const clearCart = () => {
+    if (!isAuthenticated) {
+      alert("Debes iniciar sesión para modificar tu carrito.");
+      router.push("/login");
+      return;
+    }
+    setCartItems([]);
+    localStorage.setItem("cart", JSON.stringify([]));
+  };
+
   const updateQuantity = (id: number, quantity: number) => {
     if (quantity <= 0) {
       return;
@@ -200,6 +210,12 @@ const Cart = () => {
             Realizar Compra
           </button>
         </div>
+        <button
+          onClick={clearCart}
+          className="bg-red-600 text-white py-2 px-6 rounded-full hover:bg-red-700 transition duration-200 mt-4 w-full sm:w-auto"
+        >
+          Vaciar Carrito
+        </button>
       </div>
     </ProtectedRoute>
   );
