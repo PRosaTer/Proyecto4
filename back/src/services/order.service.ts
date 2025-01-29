@@ -22,7 +22,7 @@ export const createOrderService = async (
 
   const newOrder = OrderRepository.create();
 
-  newOrder.status = "approved";
+  newOrder.status = "aprobado";
   newOrder.date = new Date();
   newOrder.user = userF;
   newOrder.products = productsF;
